@@ -1,0 +1,75 @@
+IPv4 address classes are a way to categorize IP addresses into different groups based on their leading bits. This classification helps define the range of addresses and their use (network size, host range, etc.). IPv4 address classes were used to allocate IP address blocks based on the size of the network. There are five main classes: A, B, C, D, and E.
+
+1. Class A:
+Range:
+First Octet (Decimal): 1.0.0.0 to 126.0.0.0
+First Octet (Binary): Starts with 0 (leading bit).
+Example: 00000001 (1) to 01111110 (126)
+Subnet Mask:
+Default Subnet Mask: 255.0.0.0 (or /8)
+This means the first 8 bits are for the network part, and the remaining 24 bits are for the host part.
+Number of Networks and Hosts:
+Networks: 128 (2^7 networks because the first bit is fixed as 0).
+Hosts per Network: 16,777,214 (2^24 - 2 because the first and last addresses are reserved for network identification and broadcasting).
+Purpose:
+Class A addresses are used for very large networks, like large corporations or ISPs.
+Special Address:
+127.0.0.0 to 127.255.255.255 is reserved for loopback testing (used by a host to send packets to itself). The most common example is 127.0.0.1.
+2. Class B:
+Range:
+First Octet (Decimal): 128.0.0.0 to 191.255.255.255
+First Octet (Binary): Starts with 10 (leading bits).
+Example: 10000000 (128) to 10111111 (191)
+Subnet Mask:
+Default Subnet Mask: 255.255.0.0 (or /16)
+The first 16 bits are for the network part, and the remaining 16 bits are for the host part.
+Number of Networks and Hosts:
+Networks: 16,384 (2^14 because the first two bits are fixed).
+Hosts per Network: 65,534 (2^16 - 2).
+Purpose:
+Class B addresses are used for medium to large-sized networks, like universities and larger businesses.
+3. Class C:
+Range:
+First Octet (Decimal): 192.0.0.0 to 223.255.255.255
+First Octet (Binary): Starts with 110 (leading bits).
+Example: 11000000 (192) to 11011111 (223)
+Subnet Mask:
+Default Subnet Mask: 255.255.255.0 (or /24)
+The first 24 bits are for the network part, and the remaining 8 bits are for the host part.
+Number of Networks and Hosts:
+Networks: 2,097,152 (2^21 because the first three bits are fixed).
+Hosts per Network: 254 (2^8 - 2).
+Purpose:
+Class C addresses are used for small networks, such as small businesses or private LANs.
+4. Class D:
+Range:
+First Octet (Decimal): 224.0.0.0 to 239.255.255.255
+First Octet (Binary): Starts with 1110 (leading bits).
+Example: 11100000 (224) to 11101111 (239)
+Purpose:
+Class D is reserved for multicast addresses.
+Multicasting refers to the transmission of data to a group of hosts, not just a single one.
+This class does not have a subnet mask because it does not follow the traditional network/host address structure.
+Multicast Addresses:
+Multicast addresses are used for one-to-many communication, where multiple devices listen for data sent to the same multicast IP.
+5. Class E:
+Range:
+First Octet (Decimal): 240.0.0.0 to 255.255.255.255
+First Octet (Binary): Starts with 1111 (leading bits).
+Example: 11110000 (240) to 11111111 (255)
+Purpose:
+Class E addresses are reserved for experimental or future uscf e.
+These addresses are not intended for general use on public networks.
+Special Address Range:
+255.255.255.255 is a broadcast address used to send data to all devices in the local network.
+Summary of IPv4 Classes:
+Class	Leading Bits (Binary)	Address Range (Decimal)	Default Subnet Mask	Networks	Hosts per Network	Purpose
+A	0	1.0.0.0 to 126.255.255.255	255.0.0.0 (/8)	128	16,777,214	Very large networks
+B	10	128.0.0.0 to 191.255.255.255	255.255.0.0 (/16)	16,384	65,534	Medium to large networks
+C	110	192.0.0.0 to 223.255.255.255	255.255.255.0 (/24)	2,097,152	254	Small networks
+D	1110	224.0.0.0 to 239.255.255.255	N/A	N/A	N/A	Multicast
+E	1111	240.0.0.0 to 255.255.255.255	N/A	N/A	N/A	Experimental, reserved use
+Classless Inter-Domain Routing (CIDR):
+The original class system became inefficient as the internet grew, leading to the development of CIDR (Classless Inter-Domain Routing). CIDR ignores class boundaries and allows for more flexible address allocations, improving the use of the IPv4 address space. With CIDR, addresses are allocated based on prefix lengths (e.g., /8, /16, /24), regardless of the traditional class-based system.
+
+Today, IPv4 address allocation mostly uses CIDR, but understanding address classes is still useful for historical context and certain networking configurations.
